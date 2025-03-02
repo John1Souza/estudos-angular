@@ -1,4 +1,4 @@
-package entity;
+package br.com.calculos.calculos.entity;
 
 import java.util.List;
 
