@@ -1,6 +1,6 @@
-package br.com.calculos.calculos.service;
+package br.com.calculos.service;
 
-import br.com.calculos.calculos.entity.Livro;
+import br.com.calculos.entity.Livro;
 import org.springframework.stereotype.Service;
 
 @Service

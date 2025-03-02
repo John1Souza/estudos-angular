@@ -1,7 +1,7 @@
-package br.com.calculos.calculos.controller;
+package br.com.calculos.controller;
 
-import br.com.calculos.calculos.entity.Carro;
-import br.com.calculos.calculos.service.CarroService;
+import br.com.calculos.entity.Carro;
+import br.com.calculos.service.CarroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ public class CarroController {
     }
 
     @GetMapping("/findById/{id}")
-    public ResponseEntity<Carro> findById(@PathVariable int id) {
+    public ResponseEntity<Carro> findById(@PathVariable Long id) {
         try {
             Carro carro = this.carroService.findById(id);
             return new ResponseEntity<Carro>(carro, HttpStatus.OK);

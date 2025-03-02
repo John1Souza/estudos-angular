@@ -1,4 +1,4 @@
-package br.com.calculos.calculos;
+package br.com.calculos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

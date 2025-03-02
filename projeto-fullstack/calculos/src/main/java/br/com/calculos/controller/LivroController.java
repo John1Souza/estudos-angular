@@ -1,7 +1,7 @@
-package br.com.calculos.calculos.controller;
+package br.com.calculos.controller;
 
-import br.com.calculos.calculos.entity.Livro;
-import br.com.calculos.calculos.service.LivroService;
+import br.com.calculos.entity.Livro;
+import br.com.calculos.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

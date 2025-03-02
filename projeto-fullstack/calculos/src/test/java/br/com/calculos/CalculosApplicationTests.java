@@ -1,4 +1,4 @@
-package br.com.calculos.calculos;
+package br.com.calculos;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

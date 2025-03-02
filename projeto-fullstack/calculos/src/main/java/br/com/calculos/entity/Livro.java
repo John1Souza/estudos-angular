@@ -1,4 +1,4 @@
-package br.com.calculos.calculos.entity;
+package br.com.calculos.entity;
 
 public class Livro {
     private String titulo;

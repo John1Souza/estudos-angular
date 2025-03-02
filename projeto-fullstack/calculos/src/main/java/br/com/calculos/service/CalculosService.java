@@ -1,7 +1,7 @@
-package br.com.calculos.calculos.service;
+package br.com.calculos.service;
 
-import br.com.calculos.calculos.entity.Entrada;
-import br.com.calculos.calculos.entity.Resultado;
+import br.com.calculos.entity.Entrada;
+import br.com.calculos.entity.Resultado;
 import org.springframework.stereotype.Service;
 
 @Service
