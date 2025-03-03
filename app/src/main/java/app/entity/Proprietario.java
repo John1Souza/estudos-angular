@@ -17,6 +17,4 @@ public class Proprietario {
     private long id;
     private String name;
     private int idade;
-
-
 }

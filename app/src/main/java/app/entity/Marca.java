@@ -1,5 +1,6 @@
 package app.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,5 +22,6 @@ public class Marca {
     private String cnpj;
 
     @OneToMany(mappedBy = "marca")
+    @JsonIgnore
     private List<Carro> carroList;
 }
