@@ -1,4 +1,4 @@
-package app.entity;
+package app.model.entity;
 
 
 import jakarta.persistence.*;
@@ -14,13 +14,17 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Editora {
+public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private String cnpj;
+    private int anoPublicacao;
 
-    @OneToMany(mappedBy = "editora")
-    private List<Livro> livroList;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Editora editora;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "livro_proprietario")
+    private List<ProprietarioLivro> proprietarioList;
 }

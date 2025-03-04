@@ -1,7 +1,7 @@
-package app.repository;
+package app.model.repository;
 
-import app.entity.Carro;
-import app.entity.Marca;
+import app.model.entity.Carro;
+import app.model.entity.Marca;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

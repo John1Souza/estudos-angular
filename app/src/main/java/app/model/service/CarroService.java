@@ -1,8 +1,8 @@
-package app.service;
+package app.model.service;
 
-import app.entity.Carro;
-import app.entity.Marca;
-import app.repository.CarroRepository;
+import app.model.entity.Carro;
+import app.model.entity.Marca;
+import app.model.repository.CarroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
