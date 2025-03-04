@@ -1,7 +1,7 @@
 package app.controller;
 
-import app.entity.Carro;
-import app.service.CarroService;
+import app.model.entity.Carro;
+import app.model.service.CarroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
