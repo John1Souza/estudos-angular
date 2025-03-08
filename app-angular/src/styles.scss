@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@fortawesome/fontawesome-free/css/all.css';
+@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1280px;
+  max-width: 1280px;
+  background-color: rgb(223, 230, 238);
+  margin: 0 auto;
+}
+
+a {
+  color: white;
+}
