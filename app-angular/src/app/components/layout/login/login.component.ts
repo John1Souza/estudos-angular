@@ -15,7 +15,7 @@ export class LoginComponent {
   route = new Router();
   logar() {
     if (this.usuario === 'admin' && this.senha === 'admin') {
-      this.route.navigate(['/admin']);
+      this.route.navigate(['/admin/carros']);
     } else {
       alert('Usuário ou senha incorretos!');
     }

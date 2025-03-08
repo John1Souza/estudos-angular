@@ -1,1 +1,38 @@
-<p>carroslist works!</p>
+<div class="container-fluid mt-5">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="container-fluid d-flex justify-content-between mb-2">
+            <h1>Lista de Carros:</h1>
+            <button type="button" class="btn btn-success btn-rounded" routerLink="/admin/carros/new" mdbRipple>Novo</button>
+          </div>
+          <table class="table table-striped table-hover bg-white">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Opções</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (item of carrosList; track $index) {
+              <tr class="table-active">
+                  <td>{{ item.id}}</td>
+                  <td>{{item.marca}}</td>
+                  <td>{{item.nome}}</td>
+                  <td class="d-flex justify-content-end align-items-center">
+                    <button type="button" class="btn btn-warning btn-rounded me-1" routerLink="/admin/carros/edit/{{item.id}}" mdbRipple>Editar</button>
+                    <button type="button" class="btn btn-danger btn-rounded" (click)="excluir(item.id)" mdbRipple>Excluir</button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

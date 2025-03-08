@@ -2,15 +2,9 @@
 @import '@fortawesome/fontawesome-free/css/all.css';
 @import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  width: 1280px;
   max-width: 1280px;
+  min-height: 100vh;
   background-color: rgb(223, 230, 238);
   margin: 0 auto;
 }
