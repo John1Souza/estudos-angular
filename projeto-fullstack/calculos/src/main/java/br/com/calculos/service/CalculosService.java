@@ -2,22 +2,21 @@ package br.com.calculos.service;
 
 import br.com.calculos.entity.Entrada;
 import br.com.calculos.entity.Resultado;
+import br.com.calculos.repository.CalculoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CalculosService {
+    @Autowired
+    private CalculoRepository calculoRepository;
 
-//    public Resultado somar(Entrada entrada) {
-//        Resultado resultado = new Resultado();
-//        Integer soma = 0;
-//        if(entrada.getLista() != null){
-//            for(int i=0; i < entrada.getLista().size(); i++){
-//                soma += entrada.getLista().get(i);
-//            }
-//        }
-//        resultado.setSoma(soma);
-//        return resultado;
-//    }
+    public List<Resultado> findAll(){
+        return this.calculoRepository.findAll();
+    }
+
     public Resultado calcular(Entrada entrada) {
         Resultado resultado = new Resultado();
         Integer soma = 0;

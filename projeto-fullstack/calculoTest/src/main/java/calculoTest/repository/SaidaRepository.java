@@ -1,4 +1,8 @@
 package calculoTest.repository;
 
-public interface SaidaRepository {
+import calculoTest.entity.Entrada;
+import calculoTest.entity.Saida;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SaidaRepository extends JpaRepository<Saida, Long> {
 }
