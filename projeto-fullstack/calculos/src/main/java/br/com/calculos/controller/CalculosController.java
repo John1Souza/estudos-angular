@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.calculos.service.CalculosService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/calculos")
 public class CalculosController {
@@ -18,11 +20,11 @@ public class CalculosController {
     @Autowired
     private CalculosService calculosService;
 
-    @GetMapping("/calcular")
-    public ResponseEntity<Resultado> calcular(@RequestBody Entrada entrada) {
+    @GetMapping("/findAll")
+    public ResponseEntity<List<Resultado>> findAll(@RequestBody Entrada entrada) {
         try {
-            Resultado resultado = this.calculosService.calcular(entrada);
-            return new ResponseEntity<Resultado> (resultado, HttpStatus.OK);
+            List<Resultado> resultado = this.calculosService.findAll(entrada);
+            return new ResponseEntity<> (resultado, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }

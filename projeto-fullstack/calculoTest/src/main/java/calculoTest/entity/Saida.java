@@ -1,6 +1,4 @@
-package br.com.calculos.entity;
-
-import java.util.List;
+package calculoTest.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,15 +9,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Entrada {
-
+public class Saida {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private List<Integer> lista;
+    private Long id;
+    private Double soma;
+    private Double media;
+    private Double maior;
+    private Double menor;
 }
