@@ -27,8 +27,12 @@ export class CarroslistComponent {
       { id: 10, marca: 'Nissan', nome: 'Kicks' }
     ]};
 
-    excluir(id: number){
+    excluir(carro: Carro){
       // Implementar a exclusão
+      if(confirm('Deseja realmente excluir o carro ' + carro.nome + '?')){
+        let indice = this.carrosList.findIndex(x => {return x.id == carro.id});
+        this.carrosList.splice(indice, 1);
+      }
     }
 
 
