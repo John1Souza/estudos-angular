@@ -1,34 +1,56 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Carro } from '../../../models/carro';
+import Swal from 'sweetalert2';
 import { Router, RouterLink } from '@angular/router';
+import { CarrosService } from '../../../services/carros.service';
 
 @Component({
   selector: 'app-carroslist',
   standalone: true,
-  imports: [RouterLink, ],
+  imports: [RouterLink],
   templateUrl: './carroslist.component.html',
   styleUrl: './carroslist.component.scss'
 })
-export class CarroslistComponent {
+export class CarroslistComponent implements OnInit {
   route = new Router()
-  carrosList: Carro[] = [];
+  carros: Carro[] = [];
 
-  constructor() {
-    this.carrosList = [
-      { id: 1, marca: 'Ford', nome: 'Fiesta' },
-      { id: 2, marca: 'Chevrolet', nome: 'Onix' },
-      { id: 3, marca: 'Toyota', nome: 'Corolla' },
-      { id: 4, marca: 'Honda', nome: 'Civic' },
-      { id: 5, marca: 'Volkswagen', nome: 'Golf' },
-      { id: 6, marca: 'Hyundai', nome: 'HB20' },
-      { id: 7, marca: 'Renault', nome: 'Sandero' },
-      { id: 8, marca: 'Fiat', nome: 'Argo' },
-      { id: 9, marca: 'Peugeot', nome: '208' },
-      { id: 10, marca: 'Nissan', nome: 'Kicks' }
-    ]};
-
+  constructor(private carrosService: CarrosService) {};
+  ngOnInit() {
+    this.carrosService.carros$.subscribe(
+        carros => {this.carros = carros;}
+    );
+  }
     excluir(id: number){
       // Implementar a exclusão
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: "btn btn-success",
+          cancelButton: "btn btn-danger",
+        }
+      });
+      swalWithBootstrapButtons.fire({
+        title: "Excluir?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Excluir",
+        cancelButtonText: "Cancelar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire({
+            title: "Deletado!",
+            icon: "success"
+          });
+          this.carros = this.carros.filter(carro => carro.id !== id);
+        } else if (
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelado!",
+            icon: "error"
+          });
+        }
+      });
     }
 
 
