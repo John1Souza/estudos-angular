@@ -6,11 +6,11 @@
         <div class="card-body">
           <h5>Cadastro de Carro:</h5>
           <mdb-form-control>
-            <input mdbInput type="text" id="nome" class="form-control mb-2" [(ngModel)]="carro.nome"/>
+            <input mdbInput type="text" id="nome" class="form-control mb-2" [(ngModel)]="novoCarro.nome"/>
             <label mdbLabel class="form-label" for="nome" >Nome</label>
           </mdb-form-control>
           <mdb-form-control>
-            <input mdbInput type="password" id="marca" class="form-control mb-2" [(ngModel)]="carro.marca"/>
+            <input mdbInput type="password" id="marca" class="form-control mb-2" [(ngModel)]="novoCarro.marca"/>
             <label mdbLabel class="form-label" for="marca">Marca</label>
           </mdb-form-control>
           <button type="button" class="btn btn-primary btn-rounded" mdbRipple rippleColor="dark" (click)="salvar()">Salvar</button>
@@ -20,4 +20,3 @@
     <div class="col-sm-3 col-md-3 col-lg-2"></div>
   </div>
 </div>
-

@@ -17,14 +17,14 @@
               </tr>
             </thead>
             <tbody>
-              @for (item of carrosList; track $index) {
+              @for (carro of carros; track $index) {
               <tr class="table-active">
-                  <td>{{ item.id}}</td>
-                  <td>{{item.marca}}</td>
-                  <td>{{item.nome}}</td>
+                  <td>{{ carro.id}}</td>
+                  <td>{{carro.marca}}</td>
+                  <td>{{carro.nome}}</td>
                   <td class="d-flex justify-content-end align-items-center">
-                    <button type="button" class="btn btn-warning btn-rounded me-1" routerLink="/admin/carros/edit/{{item.id}}" mdbRipple>Editar</button>
-                    <button type="button" class="btn btn-danger btn-rounded" (click)="excluir(item.id)" mdbRipple>Excluir</button>
+                    <button type="button" class="btn btn-warning btn-rounded me-1" routerLink="/admin/carros/edit/{{carro.id}}" mdbRipple>Editar</button>
+                    <button type="button" class="btn btn-danger btn-rounded" (click)="excluir(carro.id)" mdbRipple>Excluir</button>
                   </td>
                 </tr>
               }
